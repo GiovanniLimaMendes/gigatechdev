@@ -131,7 +131,6 @@ body {
     border: 1px solid #333;
     padding: 10px;
     box-sizing: border-box;
-    margin: 10px;
 }
 
 .description-services h2,
@@ -238,6 +237,10 @@ body {
 
     .description-services {
         width: 80%;
+    }
+
+    .cta-servicos .blue-button{
+        width: 300px;
     }
 }
 
