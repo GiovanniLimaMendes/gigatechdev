@@ -3,12 +3,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: black;
+    background: linear-gradient(to right, #000 0%, #000 50%, #004AAD 110%);
     color: white;
     box-sizing: border-box;
     overflow-x: hidden;
 }
 
+/* Header responsivo */
 .header {
     background: linear-gradient(to right, #000 0%, #000 50%, #004AAD 110%);
     display: flex;
@@ -42,21 +43,15 @@ body {
     border-radius: 5px;
 }
 
-.contatos {
+/* Main section */
+.main {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.contatos .giovanni,
-.contatos .eduardo {
-    flex: 1 1 300px;
-    background-color: #222;
-    padding: 15px;
-    border-radius: 8px;
-}
-
+/* Hero section */
 .hero-image {
     width: 100%;
     height: 90vh;
@@ -110,21 +105,94 @@ body {
     background-color: #004fb6;
 }
 
-.services{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 100px;
+/* Título seção */
+.title {
+    margin: 50px;
 }
 
-.description-services{
+/* Serviços */
+.services {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.description-services {
+    width: 25%;
+    min-height: 500px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid #333;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.description-services h2,
+.description-services h3 {
+    text-align: center;
+}
+
+.description-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 30px;
+    width: 100%;
+    max-width: 280px;
+}
+
+.description-services li {
+    border-bottom: 1px solid #333;
+    padding: 8px 12px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.blue-button {
+    display: inline-block;
+    color: white;
+    padding: 15px;
+    background-color: #004AAD;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: auto;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+.blue-button:hover {
+    background-color: #004fb6;
+}
+
+.cta-servicos{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #222222;
+    margin: 50px;
 }
 
+.cta-servicos .blue-button{
+    width: 500px;
+    text-align: center;
+    font-size: large;
+}
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    .description-services {
+        width: 45%;
+    }
+}
+
+/* Tablets pequenos / celulares grandes */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -141,12 +209,12 @@ body {
 
     .hero-image {
         height: auto;
-        padding: 60px 0px;
+        padding: 60px 0;
     }
 
     .hero-image-content {
         position: static;
-        width: 100%;
+        width: 90%;
         text-align: center;
         align-items: center;
     }
@@ -164,12 +232,16 @@ body {
         font-size: 1.1rem;
     }
 
-    .contatos {
+    .services {
         flex-direction: column;
-        gap: 20px;
+    }
+
+    .description-services {
+        width: 80%;
     }
 }
 
+/* Celulares */
 @media (max-width: 480px) {
     .gigatech_logo {
         width: 120px;
@@ -191,5 +263,14 @@ body {
     .options a {
         padding: 8px;
         font-size: 0.95rem;
+    }
+
+    .description-services {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .description-services ul {
+        max-width: 100%;
     }
 }
