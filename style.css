@@ -16,7 +16,7 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 0px 20px;
 }
 
 .gigatech_logo {
@@ -39,8 +39,8 @@ body {
 }
 
 .options a:hover {
-    background-color: #333;
-    border-radius: 5px;
+    border-bottom: 3px solid #141414;
+    border-radius: 3px;
 }
 
 /* Main section */
