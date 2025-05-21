@@ -6,18 +6,25 @@
     <meta name="description" content="Criação de sites profissionais, landing pages e sistemas personalizados com alta performance.">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Giga Tech</title>
 </head>
 <body>
     <header class="header">
         <img src="img/gigatech_logo.png" alt="gigatech_logo" class="gigatech_logo">
+         <button class="menuzinho" >
+                <i class="fa fa-bars"></i>
+        </button>
         <div class="options">
             <a onclick="location.href='#hero-image'">Inicio</a>
             <a onclick="location.href='#services'">Serviços</a>
             <a href="#">Projetos</a>
             <a onclick="location.href='#about'">Sobre</a>
             <a onclick="location.href='#contato'">Contato</a>
+
+          
         </div>
+            
     </header>
     <main class="main">
         <div class="hero-image" id="hero-image">
@@ -150,6 +157,15 @@
     </footer>
 
     <script>
+
+        const btnMenu = document.querySelector('.menuzinho');
+        const menu = document.querySelector('.options');
+
+            btnMenu.addEventListener('click', () => {
+                menu.classList.toggle('show');
+            });
+
+      
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = 'style.css?v=' + new Date().getTime();

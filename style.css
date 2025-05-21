@@ -11,8 +11,49 @@ body {
     color: white;
     box-sizing: border-box;
     overflow-x: hidden;
+
 }
 
+.menuzinho {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+@media (max-width: 768px) {
+    .menuzinho {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .options {
+        display: none;
+        flex-direction: column;
+        /*BACKGROUND COLOR OPCIONAL*/
+        background: linear-gradient(to right, #000 0%, #000 50%, #004AAD 110%);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+    }
+
+    .options.show {
+        display: flex;
+    }
+
+    .options a {
+        color: white;
+        padding: 10px 0;
+    }
+}
 /* Header responsivo */
 .header {
     background: linear-gradient(to right, #000 0%, #000 50%, #004AAD 110%);
@@ -29,11 +70,6 @@ body {
     height: auto;
 }
 
-.options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
 .options a {
     color: white;
