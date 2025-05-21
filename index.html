@@ -137,7 +137,7 @@
             <p>Desenvolvido por Giga Tech</p>
         </div>
         <div class="form" id="contato">
-            <form method="POST" action="https://formsubmit.co/giovanni.mendes@gigatechdev.com.br">
+            <form method="POST" action="https://formsubmit.co/giovanni.mendes@gigatechdev.com.br" id="contact-form">
                 <h2>Informações de contato</h2>
                 <span>Deixe suas informações de contato e entraremos em contato com você</span><br>
                 <input type="text" name="name" class="input" id="name" placeholder="Nome*" required><br>
@@ -146,7 +146,12 @@
                 <input type="email" name="mail" class="input" id="mail" placeholder="E-mail*" required><br>
                 <textarea name="description-contact" class="input" id="description-contact" placeholder="Descreva suas necessidades*" required></textarea>
                 <button type="submit" class="blue-button">Enviar</button>
+                <input type="hidden" name="_captcha" value="false">
             </form>
+            <div id="overlay">
+                <div class="loader"></div>
+                <div class="success-icon">&#10003;</div> <!-- símbolo de check -->
+            </div>
         </div>
         <div class="social-medias">
             <a href="http://instagram.com/gigatech.campinas"><img src="img/square-instagram-brands.svg" alt="instagram" width="30px"></a>
@@ -157,25 +162,85 @@
     </footer>
 
     <script>
-
+        // Referências de elementos do DOM
         const btnMenu = document.querySelector('.menuzinho');
         const menu = document.querySelector('.options');
 
-            btnMenu.addEventListener('click', () => {
-                menu.classList.toggle('show');
-            });
+        const form = document.getElementById('contact-form');
+        const overlay = document.getElementById('overlay');
+        const loader = overlay.querySelector('.loader');
+        const successIcon = overlay.querySelector('.success-icon');
+        const responseDiv = document.getElementById('form-response');
 
-      
+        // Carrega stylesheet com cache busting
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = 'style.css?v=' + new Date().getTime();
         document.head.appendChild(link);
 
+        // Evento para alternar menu
+        btnMenu.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+
+        // Ajuste automático da altura do textarea ao digitar
         document.addEventListener('input', function (e) {
             if (e.target.tagName.toLowerCase() === 'textarea') {
-            e.target.style.height = 'auto'; // reseta altura
-            e.target.style.height = e.target.scrollHeight + 'px'; // ajusta altura
+                e.target.style.height = 'auto'; // reseta altura
+                e.target.style.height = e.target.scrollHeight + 'px'; // ajusta altura
             }
+        });
+
+        // Evento de submit do formulário
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // evita o envio padrão
+
+            // Limpa mensagens antigas
+            if (responseDiv) {
+                responseDiv.textContent = '';
+                responseDiv.style.color = '';
+            }
+
+            // Exibe overlay com loader
+            overlay.style.display = 'flex';
+            loader.style.display = 'block';
+            successIcon.style.display = 'none';
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Envio OK: esconde loader, mostra sucesso
+                    loader.style.display = 'none';
+                    successIcon.style.display = 'flex';
+
+                    // Após 1.5s esconde overlay e reseta formulário
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                        form.reset();
+                    }, 1500);
+                } else {
+                    throw new Error('Erro ao enviar o formulário');
+                }
+            })
+            .catch(error => {
+                // Em caso de erro: esconde overlay e mostra mensagem na div de resposta
+                overlay.style.display = 'none';
+
+                if (responseDiv) {
+                    responseDiv.style.color = 'red';
+                    responseDiv.textContent = 'Erro ao enviar a mensagem. Por favor, tente novamente.';
+                }
+
+                console.error(error);
+            });
         });
     </script>
 
