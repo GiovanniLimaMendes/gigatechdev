@@ -129,7 +129,19 @@
             <p>© 2025 Giga Tech. Todos os direitos reservados.</p>
             <p>Desenvolvido por Giga Tech</p>
         </div>
-        <div class="social-medias" id="contato">
+        <div class="form" id="contato">
+            <form method="POST" action="https://formsubmit.co/giovanni.mendes@gigatechdev.com.br">
+                <h2>Informações de contato</h2>
+                <span>Deixe suas informações de contato e entraremos em contato com você</span><br>
+                <input type="text" name="name" class="input" id="name" placeholder="Nome*" required><br>
+                <input type="text" name="surname" class="input" id="surname" placeholder="Sobrenome"><br>
+                <input type="tel" name="phone" class="input" id="phone" placeholder="Telefone*" required><br>
+                <input type="email" name="mail" class="input" id="mail" placeholder="E-mail*" required><br>
+                <textarea name="description-contact" class="input" id="description-contact" placeholder="Descreva suas necessidades*" required></textarea>
+                <button type="submit" class="blue-button">Enviar</button>
+            </form>
+        </div>
+        <div class="social-medias">
             <a href="http://instagram.com/gigatech.campinas"><img src="img/square-instagram-brands.svg" alt="instagram" width="30px"></a>
             <a href="https://www.linkedin.com/company/giga-tech-campinas"><img src="img/linkedin-brands.svg" alt="linkedin" width="30px"></a>
             <a href="http://wa.me/5519998069803"><img src="img/square-whatsapp-brands.svg" alt="whatsapp" width="30px"></a>
@@ -142,6 +154,13 @@
         link.rel = 'stylesheet';
         link.href = 'style.css?v=' + new Date().getTime();
         document.head.appendChild(link);
+
+        document.addEventListener('input', function (e) {
+            if (e.target.tagName.toLowerCase() === 'textarea') {
+            e.target.style.height = 'auto'; // reseta altura
+            e.target.style.height = e.target.scrollHeight + 'px'; // ajusta altura
+            }
+        });
     </script>
 
 </body>
