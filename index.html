@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Criação de sites profissionais, landing pages e sistemas personalizados com alta performance.">
     <link rel="stylesheet" href="style.css">
     <title>Giga Tech</title>
 </head>
@@ -10,21 +11,22 @@
     <header class="header">
         <img src="img/gigatech_logo.png" alt="gigatech_logo" class="gigatech_logo">
         <div class="options">
-            <a href="#">Inicio</a>
+            <a onclick="location.href='#hero-image'">Inicio</a>
+            <a onclick="location.href='#services'">Serviços</a>
             <a href="#">Projetos</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
+            <a onclick="location.href='#about'">Sobre</a>
+            <a onclick="location.href='#contato'">Contato</a>
         </div>
     </header>
     <main class="main">
-        <div class="hero-image">
+        <div class="hero-image" id="hero-image">
             <div class="hero-image-content">
                 <span id="hero-image-title">Transforme sua presença digital com um site profissional.</span>
                 <p id="hero-image-paragraph">Criação de sites institucionais, landing pages e sistemas personalizados com design moderno e performance de verdade.</p>
-                <button class="hero-image-button">Faça seu orçamento!</button>
+                <button class="hero-image-button" onclick="location.href='#contato'">Faça seu orçamento!</button>
             </div>
         </div>
-        <h1 class="title">Nossos serviços</h1>
+        <h1 class="title" id="services">Nossos serviços</h1>
         <div class="services">
             <div class="description-services" id="site-institucional">
                 <h2>Site institucional</h2>
@@ -36,9 +38,9 @@
                     <li>Página de contato com mapa e formulário</li>
                     <li>Links para redes sociais</li>
                 </ul>
-                <a href="" class="blue-button">O que é um Site Institucional?</a>
+                <a onclick="location.href='#institutional-page'" class="blue-button">O que é um Site Institucional?</a>
             </div>
-            <div class="description-services" id="landing-page">
+            <div class="description-services">
                 <h2>Landing page</h2>
                 <h3>Foco total em conversão</h3>
                 <ul>
@@ -48,7 +50,7 @@
                     <li>Rápida e leve</li>
                     <li>Alta taxa de conversão comprovada</li>
                 </ul>
-                <a href="" class="blue-button">O que é uma Landing Page?</a>
+                <a onclick="location.href='#landing-page'" class="blue-button">O que é uma Landing Page?</a>
             </div>
             <div class="description-services" id="sistemas-personalizados">
                 <h2>Sistemas personalizados</h2>
@@ -60,16 +62,16 @@
                     <li>Integração com banco de dados e APIs</li>
                     <li>Automação de processos repetitivos</li>
                 </ul>
-                <a href="" class="blue-button">O que é um Sistema Personalizado?</a>
+                <a onclick="location.href='#custom-system'" class="blue-button">O que é um Sistema Personalizado?</a>
             </div>
         </div>
         <div class="cta-servicos">
             <h2 class="text-xl font-semibold mb-4 text-white">Pronto para transformar seu negócio com um site profissional?</h2>
             <a href="#contato" class="blue-button">Solicitar um orçamento gratuito</a>
         </div>
-        <h1 class="title">Sobre os serviços</h1>
+        <h1 class="title" id="about">Sobre os serviços</h1>
         <div class="about-pages">
-            <div class="about" id="insitutional-page">
+            <div class="about" id="institutional-page">
                 <div class="text">
                     <h2>O que é um Site Institucional?</h2>
                     <span class="page-description">Um site institucional é a vitrine digital da sua empresa. Ele apresenta sua marca, seus valores, serviços, produtos e formas de contato. Ideal para negócios que desejam ter presença online, transmitir credibilidade e facilitar que clientes encontrem informações sobre a empresa.</span>
@@ -80,7 +82,7 @@
                         <li>Canal direto de contato com o cliente</li>
                         <li>Transmite profissionalismo e confiança</li>
                     </ul>
-                    <button class="blue-button">Faça seu site institucional!</button>
+                    <button class="blue-button" onclick="location.href='#contato'">Faça seu site institucional!</button>
                 </div>
             </div>
             <div class="about" id="landing-page">
@@ -100,7 +102,7 @@
                         <li>Rápido tempo de carregamento</li>
                         <li>Maior taxa de resultados com menor custo</li>
                     </ul>
-                    <button class="blue-button">Faça sua Landing Page!</button>
+                    <button class="blue-button" onclick="location.href='#contato'">Faça sua Landing Page!</button>
                 </div>
             </div>
             <div class="about" id="custom-system">
@@ -115,11 +117,24 @@
                         <li>Suporte técnico dedicado</li>
                         <li>Integrações com outros sistemas e plataformas</li>
                     </ul>
-                    <button class="blue-button">Faça seu Sistema Personalizado!</button>
+                    <button class="blue-button" onclick="location.href='#contato'">Faça seu Sistema Personalizado!</button>
                 </div>
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <div class="footer-rights">
+            <img src="img/gigatech_logo.png" alt="gigatech_logo" class="gigatech_logo">
+            <p>© 2025 Giga Tech. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Giga Tech</p>
+        </div>
+        <div class="social-medias" id="contato">
+            <a href="http://instagram.com/gigatech.campinas"><img src="img/square-instagram-brands.svg" alt="instagram" width="30px"></a>
+            <a href="https://www.linkedin.com/company/giga-tech-campinas"><img src="img/linkedin-brands.svg" alt="linkedin" width="30px"></a>
+            <a href="http://wa.me/5519998069803"><img src="img/square-whatsapp-brands.svg" alt="whatsapp" width="30px"></a>
+            <a href="mailto:giovanni.mendes@gigatechdev.com.br"><img src="img/square-envelope-solid.svg" alt="mail" width="30px"></a>
+        </div>
+    </footer>
 
     <script>
         const link = document.createElement('link');
