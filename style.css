@@ -36,10 +36,9 @@ body {
 
 .gigatech_logo {
     width: 250px;
-    padding: 25px;
+    padding: 20px;
     height: auto;
 }
-
 
 .options a {
     color: white;
@@ -47,11 +46,12 @@ body {
     text-decoration: none;
     border-bottom: 3px solid transparent;
     padding: 10px;
+    cursor: pointer;
     transition: background 0.3s, color 0.3s;
 }
 
 .options a:hover {
-    border-bottom: 3px solid #141414;
+    border-bottom: 3px solid #ffffff;
     border-radius: 3px;
 }
 
@@ -141,8 +141,11 @@ body {
     align-items: center;
     justify-content: flex-start;
     border: 1px solid #333;
+    border-radius: 10px;
     padding: 10px;
     box-sizing: border-box;
+    /* background-color: #042b5e; */
+    /* background: linear-gradient(to right, #191919 0%, #191919 50%, #004AAD 200%); */
 }
 
 .description-services h2,
@@ -237,13 +240,9 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 50px;
-}
-
-.footer-rights p{
-    padding-left: 50px;
 }
 
 .form{
@@ -338,15 +337,6 @@ textarea{
   display: flex !important;
 }
 
-
-.social-medias{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-right: 50px;
-    align-items: center;
-}
-
 /* Tablets e telas médias */
 @media (max-width: 1024px) {
     .description-services {
@@ -356,6 +346,21 @@ textarea{
     .social-medias{
         flex-direction: row;
     }
+}
+
+.footer-rights{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.social-medias{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+    align-items: center;
 }
 
 /* Tablets pequenos / celulares grandes */
