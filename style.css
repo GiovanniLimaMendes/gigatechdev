@@ -216,6 +216,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     margin: 25px;
+    margin-bottom: 100px;
 }
 
 .page-description{
@@ -234,6 +235,89 @@ body {
 
 .text li{
     padding: 5px 0;
+}
+
+.projects{
+    width: 85%;
+    max-width: 85%;
+    margin: 50px;
+}
+
+.fsw-barber{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.project-images{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.project-description{
+    width: 50%;
+}
+
+.project-description button{
+    font-size: large;
+}
+
+.used-technologies{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    background-color: #000;
+    padding: 100px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #000000 0%, #000 50%, #222 100%);
+}
+
+.used-technologies i{
+    font-size: 80px;
+}
+
+.whatsapp{
+    width: 85%;
+    background-color: #071B1A;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px;
+}
+
+.cta-whatsapp{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.cta-whatsapp img{
+    margin: 0 20px;
+}
+
+.whatsapp-button{
+    background-color: #01A180;
+    display: inline-block;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 0 20px;
 }
 
 .footer{
@@ -358,7 +442,6 @@ textarea{
 
 .social-medias{
     display: flex;
-    /* flex-direction: column; */
     gap: 10px;
     align-items: center;
 }
@@ -441,9 +524,37 @@ textarea{
     }
     
     .social-medias{
-        flex-direction: row;
         justify-content: center;
         padding: 0;
+    }
+
+    .fsw-barber{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .project-images{
+        width: 60%;
+        gap: 25px;
+    }
+
+    .project-description{
+        width: 60%;
+    }
+
+    .whatsapp{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 20px 0;
+        margin-bottom: 0;
+    }
+
+    .cta-whatsapp{
+        align-items: center;
+        justify-content: center;
     }
 }
 
