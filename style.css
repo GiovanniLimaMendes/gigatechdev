@@ -76,6 +76,7 @@ body {
     background-image: url(img/hero-banner.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: 60px;
 }
 
 .hero-image-content {
