@@ -253,7 +253,8 @@ body {
 
 .project{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 50px;
     flex-wrap: wrap;
     box-sizing: border-box;
     width: 100%;
@@ -261,10 +262,8 @@ body {
 }
 
 #fsw-barber img{
-    max-width: 200px;
-    max-height: 500px;
-    padding-left: 40%;
-    padding-right: 100%;
+    width: 250px;
+    height: 100%;
 }
 
 .project-images{
@@ -277,11 +276,61 @@ body {
 }
 
 .project-description{
-    width: 50%;
+    width: 40%;
 }
 
 .project-description button{
     font-size: large;
+}
+
+.carrossel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.slide{
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
 }
 
 .used-technologies{
@@ -557,7 +606,16 @@ textarea{
     }
 
     .project-description{
-        width: 60%;
+        width: 90%;
+    }
+
+    .slides{
+        width: 100%;
+    }
+
+    .carrossel {
+        width: 100%;
+        max-width: 500px;
     }
 
     .whatsapp{
@@ -607,55 +665,4 @@ textarea{
     .description-services ul {
         max-width: 100%;
     }
-}
-
-.carrossel {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  width: 100%;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  margin-right: 20px;
-  gap: 20px;
-}
-
-.slides img {
-  /* width: calc(100% - 20px); */
-  flex-shrink: 0;
-}
-
-button.prev, button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-button.prev {
-  left: 10px;
-}
-
-button.next {
-  right: 10px;
-}
-
-@media (max-width: 768px) {
-
-    .slides{
-        width: 100%;
-    }
-
-  .carrossel {
-    width: 100%;
-    max-width: 500px;
-  }
 }

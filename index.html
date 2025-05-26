@@ -133,8 +133,15 @@
                 <div class="project-images">
                     <div class="carrossel">
                         <div class="slides">
-                            <img src="img/fsw-barber1.webp" alt="Tela 1">
-                            <img src="img/fsw-barber2.webp" alt="Tela 2">
+                            <div class="slide">
+                                <img src="img/fsw-barber1.webp" alt="...">
+                            </div>
+                            <div class="slide">
+                                <img src="img/fsw-barber2.webp" alt="...">
+                            </div>
+                            <div class="slide">
+                                <img src="img/fsw-barber3.webp" alt="Tela 3">
+                            </div>
                         </div>
 
                         <!-- Botões de navegação -->
@@ -143,7 +150,7 @@
                     </div>
                 </div>
                 <div class="project-description">
-                    <h2>SAAS de Agendamento para Baebearias</h2>
+                    <h2>SAAS de Agendamento para Barbearias</h2>
                     <p>Nossa plataforma foi criada para modernizar o atendimento em barbearias, permitindo que os clientes escolham a unidade desejada, visualizem informações como serviços, horários, endereço e contato, e realizem o agendamento de forma rápida e intuitiva. O sistema conta com login via Google para facilitar o acesso, e integração com o Stripe para pagamentos online, inclusive em totens físicos. É uma solução completa para barbearias que desejam automatizar seus agendamentos e oferecer uma experiência digital eficiente aos seus clientes.</p>
                     <button class="blue-button" onclick="location.href='#contato'">Simplifique seus horários</button>
                 </div>
@@ -152,9 +159,18 @@
                 <div class="project-images">
                     <div class="carrossel">
                         <div class="slides">
-                            <img src="img/dr-agenda.webp" alt="Tela 1">
-                            <img src="img/dr-agenda1.webp" alt="Tela 2">
-                            <img src="img/dr-agenda2.webp" alt="Tela 2">
+                            <div class="slide">
+                                <img src="img/dr-agenda.webp" alt="...">
+                            </div>
+                            <div class="slide">
+                                <img src="img/dr-agenda1.webp" alt="...">
+                            </div>
+                            <div class="slide">
+                                <img src="img/dr-agenda2.webp" alt="Tela 3">
+                            </div>
+                            <div class="slide">
+                                <img src="img/dr-agenda3.webp" alt="Tela 3">
+                            </div>
                         </div>
 
                         <!-- Botões de navegação -->
@@ -309,7 +325,7 @@
 
         document.querySelectorAll('.carrossel').forEach(carrossel => {
             const slides = carrossel.querySelector('.slides');
-            const images = carrossel.querySelectorAll('.slides img');
+            const images = carrossel.querySelectorAll('.slide');
             const prevBtn = carrossel.querySelector('.prev');
             const nextBtn = carrossel.querySelector('.next');
 
