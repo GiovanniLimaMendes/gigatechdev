@@ -245,13 +245,26 @@ body {
     width: 85%;
     max-width: 85%;
     margin: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    /* background-color: red; */
 }
 
-.fsw-barber{
+.project{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     box-sizing: border-box;
+    width: 100%;
+    align-items: center;
+}
+
+#fsw-barber img{
+    max-width: 200px;
+    max-height: 500px;
+    padding-left: 40%;
+    padding-right: 100%;
 }
 
 .project-images{
@@ -532,14 +545,14 @@ textarea{
         padding: 0;
     }
 
-    .fsw-barber{
+    .project{
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
 
     .project-images{
-        width: 60%;
+        width: 100%;
         gap: 25px;
     }
 
@@ -594,4 +607,55 @@ textarea{
     .description-services ul {
         max-width: 100%;
     }
+}
+
+.carrossel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin-right: 20px;
+  gap: 20px;
+}
+
+.slides img {
+  /* width: calc(100% - 20px); */
+  flex-shrink: 0;
+}
+
+button.prev, button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .slides{
+        width: 100%;
+    }
+
+  .carrossel {
+    width: 100%;
+    max-width: 500px;
+  }
 }

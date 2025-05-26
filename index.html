@@ -129,10 +129,39 @@
         </div>
         <h1>Projetos</h1>
         <div class="projects">
-            <div class="fsw-barber">
+            <div class="project" id="fsw-barber">
                 <div class="project-images">
-                    <img src="img/fsw-barber1.webp" alt="Menu inicial, projeto barbearia" width="200px">
-                    <img src="img/fsw-barber2.webp" alt="Menu barbearia, projeto barbearia" width="200px">
+                    <div class="carrossel">
+                        <div class="slides">
+                            <img src="img/fsw-barber1.webp" alt="Tela 1">
+                            <img src="img/fsw-barber2.webp" alt="Tela 2">
+                        </div>
+
+                        <!-- Botões de navegação -->
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <h2>SAAS de Agendamento para Baebearias</h2>
+                    <p>Nossa plataforma foi criada para modernizar o atendimento em barbearias, permitindo que os clientes escolham a unidade desejada, visualizem informações como serviços, horários, endereço e contato, e realizem o agendamento de forma rápida e intuitiva. O sistema conta com login via Google para facilitar o acesso, e integração com o Stripe para pagamentos online, inclusive em totens físicos. É uma solução completa para barbearias que desejam automatizar seus agendamentos e oferecer uma experiência digital eficiente aos seus clientes.</p>
+                    <button class="blue-button" onclick="location.href='#contato'">Simplifique seus horários</button>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project-images">
+                    <div class="carrossel">
+                        <div class="slides">
+                            <img src="img/dr-agenda.webp" alt="Tela 1">
+                            <img src="img/dr-agenda1.webp" alt="Tela 2">
+                            <img src="img/dr-agenda2.webp" alt="Tela 2">
+                        </div>
+
+                        <!-- Botões de navegação -->
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+
                 </div>
                 <div class="project-description">
                     <h2>SAAS de Agendamento para Baebearias</h2>
@@ -276,6 +305,27 @@
 
                 console.error(error);
             });
+        });
+
+        document.querySelectorAll('.carrossel').forEach(carrossel => {
+            const slides = carrossel.querySelector('.slides');
+            const images = carrossel.querySelectorAll('.slides img');
+            const prevBtn = carrossel.querySelector('.prev');
+            const nextBtn = carrossel.querySelector('.next');
+
+            let index = 0;
+
+            function showSlide(i) {
+                const slideWidth = images[0].offsetWidth + 20;
+                if (i < 0) index = images.length - 1;
+                else if (i >= images.length) index = 0;
+                else index = i;
+
+                slides.style.transform = `translateX(-${index * slideWidth}px)`;
+            }
+
+            prevBtn.addEventListener('click', () => showSlide(index - 1));
+            nextBtn.addEventListener('click', () => showSlide(index + 1));
         });
     </script>
 
