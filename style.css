@@ -584,6 +584,10 @@ textarea{
         width: 300px;
     }
 
+    .about{
+        width: 75%;
+    }
+
     .footer{
         justify-content: center;
         padding-bottom: 50px;
